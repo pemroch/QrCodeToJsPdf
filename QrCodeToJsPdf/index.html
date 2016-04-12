@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc2/angular-material.css">
+    <link rel="stylesheet" href="https://material.angularjs.org/1.1.0-rc2/docs.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc2/angular-material.js"></script>
+    <script src="app.js"></script>
+    <script src="jspdf.js"></script>
+    <script src="qr.js"></script>
+  </head>
+  
+  <body ng-app="App">
+    
+    <md-subheader class="md-no-sticky">List of Names</md-subheader>
+    <md-divider></md-divider>
+    <md-list ng-controller="AppCtrl as app">
+      <md-list-item ng-repeat="name in app.names" ng-click="app.generateQrCodePdf( name )">
+        <p>{{ name.fName }} {{ name.lName }}</p>
+      </md-list-item>
+    </md-list>
+    <md-divider></md-divider>
+    
+  </body>
+  
+</html>
